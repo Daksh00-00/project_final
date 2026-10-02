@@ -185,7 +185,10 @@ def create_account():
     if ok:
         messagebox.showinfo("Success",message)
     else:
-        messagebox.showerror("Error",message)
+        messagebox.showerror("Error",message+
+            "\nReceived: "+repr(passkey)+
+            "\nExpected: "+repr(backend.ADMIN_PASSKEY)+
+            "\nBackend file: "+backend.__file__)
 #login function (og)
 def login_user():
 
